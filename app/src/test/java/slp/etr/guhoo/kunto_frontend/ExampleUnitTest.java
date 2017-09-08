@@ -1,4 +1,4 @@
-package com.example.s12t282.kunto;
+package slp.etr.guhoo.kunto_frontend;
 
 import org.junit.Test;
 

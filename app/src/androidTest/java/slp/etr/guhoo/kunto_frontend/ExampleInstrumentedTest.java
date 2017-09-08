@@ -1,4 +1,4 @@
-package com.example.s12t282.kunto;
+package slp.etr.guhoo.kunto_frontend;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.s12t282.kunto", appContext.getPackageName());
+        assertEquals("slp.etr.guhoo.kunto_frontend", appContext.getPackageName());
     }
 }

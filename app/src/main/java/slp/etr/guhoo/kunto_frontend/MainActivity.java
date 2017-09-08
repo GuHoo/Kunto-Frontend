@@ -1,4 +1,4 @@
-package com.example.s12t282.kunto;
+package slp.etr.guhoo.kunto_frontend;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -142,33 +142,9 @@ public class MainActivity extends AppCompatActivity implements Runnable, View.On
             connectFlg = true;
 
             while(isRunning) {
-
                 // InputStreamの読み込み
-                // bytes = mmInStream.read(buffer):
                 String data = this.convertInputStreamToString(mmInStream);
                 Log.i("TAG", data);
-                /*
-                // Log.i("", Integer.toString(bytes));
-                //Log.i(TAG,  );
-                // String型に変換
-                byte[] characters = new byte[1024];
-                String readMsg = new String(characters, 0, bytes);
-                Log.i(TAG,"str="+readMsg);
-
-                // null以外なら表示
-                if(readMsg.trim() != null && !readMsg.trim().equals("")){
-                    Log.i(TAG,"value="+readMsg.trim());
-
-                    valueMsg = new Message();
-                    valueMsg.what = VIEW_INPUT;
-                    valueMsg.obj = readMsg;
-                    mHandler.sendMessage(valueMsg);
-                }
-                else{
-                    // Log.i(TAG,"value=nodata");
-                }
-                */
-
             }
         } catch(Exception e){
 
@@ -176,7 +152,6 @@ public class MainActivity extends AppCompatActivity implements Runnable, View.On
             valueMsg.what = VIEW_STATUS;
             valueMsg.obj = "Error1:" + e;
             mHandler.sendMessage(valueMsg);
-
 
             try{
                 mSocket.close();
