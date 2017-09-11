@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MeasureActivity"></activity>
+        <activity android:name=".MeasureActivity" />
+        <activity android:name=".RequestTokenActivity"></activity>
     </application>
 
 </manifest>
