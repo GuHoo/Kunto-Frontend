@@ -6,4 +6,18 @@
     android:layout_height="match_parent"
     tools:context="slp.etr.guhoo.kunto_frontend.RequestTokenActivity">
 
+    <TextView
+        android:id="@+id/textRequestToken"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="8dp"
+        android:text="トークンのリクエストのテスト"
+        android:textSize="16sp" />
+
+    <Button android:id="@+id/buttonRequestToken"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="リクエスト送信" />
+
 </android.support.constraint.ConstraintLayout>

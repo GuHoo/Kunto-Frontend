@@ -5,18 +5,33 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/statusValue"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="8dp"
-        android:text="アクティビティの遷移テスト"
-        android:textSize="16sp"
-        />
+    android:id="@+id/textMeasure"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginTop="8dp"
+    android:text="アクティビティの遷移テスト"
+    android:textSize="16sp"
+    />
 
     <Button android:id="@+id/buttonMeasure"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="測定画面へ移動" />
+
+    <TextView
+        android:id="@+id/textRequestToken"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:text="トークンのリクエストのテスト"
+        android:textSize="16sp"
+        />
+
+    <Button android:id="@+id/buttonRequestToken"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="トークンリクエスト画面へ遷移" />
 
 </LinearLayout>
