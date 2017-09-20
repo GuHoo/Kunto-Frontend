@@ -8,7 +8,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //startActivityForResultで起動
             startActivity(intent);
         } else if(v.getId() == R.id.buttonRequestToken) {
-            Log.i("", "koko");
             Intent intent = new Intent(this, RequestTokenActivity.class);
             startActivity(intent);
         }

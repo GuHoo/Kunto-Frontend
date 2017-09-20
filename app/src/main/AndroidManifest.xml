@@ -12,16 +12,16 @@
         android:label="Kunto"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".KuntoAppllication">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MeasureActivity" />
-        <activity android:name=".RequestTokenActivity"></activity>
+        <activity android:name=".RequestTokenActivity" />
     </application>
 
 </manifest>

@@ -1,19 +1,33 @@
 package slp.etr.guhoo.kunto_frontend;
 
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.function.Function;
-
-import slp.etr.guhoo.kunto_frontend.utils.FetchTokenRequestAsync;
+import java.util.List;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
+import slp.etr.guhoo.kunto_frontend.utils.SignInResponse;
+import timber.log.Timber;
 
 public class RequestTokenActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+    public interface KuntoService {
+        @POST("api/users/sign_in")
+        Observable<SignInResponse> repos(@Query("email") String email, @Query("password") String password);
+    }
+
+    OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)).build();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +39,27 @@ public class RequestTokenActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
+        String url = getString(R.string.api_server);
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(okHttpClient)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(url)
+                .build();
+        KuntoService service = retrofit.create(KuntoService.class);
+
         if (v.getId() == R.id.buttonRequestToken) {
-            URL url = null;
-            try {
-                url = new URL(getString(R.string.api_server) + "/api/users/sign_in");
-                new FetchTokenRequestAsync().execute(url);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
+            Observable<SignInResponse> repos = service.repos("sample@hoge.com", "hogehoge");
+            repos
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            list -> {
+                                Timber.d("success");
+                            },
+                            throwable -> Timber.e(throwable),
+                            () -> Timber.d("complete")
+                    );
         }
     }
 }
