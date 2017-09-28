@@ -1,4 +1,4 @@
-package slp.etr.guhoo.kunto_frontend;
+package slp.etr.guhoo.kunto_frontend.activitys;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -20,6 +20,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
+
+import slp.etr.guhoo.kunto_frontend.R;
 
 public class MeasureActivity extends AppCompatActivity implements Runnable, View.OnClickListener  {
 

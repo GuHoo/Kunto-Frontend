@@ -1,4 +1,4 @@
-package slp.etr.guhoo.kunto_frontend.utils;
+package slp.etr.guhoo.kunto_frontend.utils.http;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

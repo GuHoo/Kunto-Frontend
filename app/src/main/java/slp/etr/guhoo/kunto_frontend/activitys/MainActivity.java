@@ -1,10 +1,11 @@
-package slp.etr.guhoo.kunto_frontend;
+package slp.etr.guhoo.kunto_frontend.activitys;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+
+import slp.etr.guhoo.kunto_frontend.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
