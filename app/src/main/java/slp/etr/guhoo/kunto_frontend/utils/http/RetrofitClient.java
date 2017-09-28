@@ -11,9 +11,9 @@ import slp.etr.guhoo.kunto_frontend.KuntoAppllication;
 import slp.etr.guhoo.kunto_frontend.R;
 
 public class RetrofitClient {
-    static private String url;
-    static private OkHttpClient okHttpClient;
-    static private Retrofit retrofit;
+    private static String url;
+    private static OkHttpClient okHttpClient;
+    private static Retrofit retrofit;
 
     static {
         url = KuntoAppllication.getURL();
