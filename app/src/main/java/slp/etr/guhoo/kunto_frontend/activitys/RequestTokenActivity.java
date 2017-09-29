@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers;
 import slp.etr.guhoo.kunto_frontend.R;
 import slp.etr.guhoo.kunto_frontend.utils.http.KuntoService;
 import slp.etr.guhoo.kunto_frontend.utils.http.RetrofitClient;
-import slp.etr.guhoo.kunto_frontend.utils.http.SignInResponse;
+import slp.etr.guhoo.kunto_frontend.utils.http.entity.SignInResponse;
 import timber.log.Timber;
 
 public class RequestTokenActivity extends AppCompatActivity implements View.OnClickListener {
@@ -19,7 +19,7 @@ public class RequestTokenActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_token);
-        //リスナーをセット
+
         findViewById(R.id.buttonRequestToken).setOnClickListener(this);
     }
 
@@ -29,7 +29,7 @@ public class RequestTokenActivity extends AppCompatActivity implements View.OnCl
         KuntoService service = RetrofitClient.create();
 
         if (v.getId() == R.id.buttonRequestToken) {
-            Observable<SignInResponse> repos = service.repos("sample@hoge.com", "hogehoge");
+            Observable<SignInResponse> repos = service.signIn("sample@hoge.com", "hogehoge");
             repos
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
