@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activitys.MeasureActivity" />
-        <activity android:name=".activitys.RequestTokenActivity" />
+        <activity android:name=".activitys.SignInActivity" />
     </application>
 
 </manifest>

@@ -13,12 +13,12 @@ import slp.etr.guhoo.kunto_frontend.utils.http.RetrofitClient;
 import slp.etr.guhoo.kunto_frontend.utils.http.entity.SignInResponse;
 import timber.log.Timber;
 
-public class RequestTokenActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request_token);
+        setContentView(R.layout.activity_sign_in);
 
         findViewById(R.id.buttonRequestToken).setOnClickListener(this);
     }

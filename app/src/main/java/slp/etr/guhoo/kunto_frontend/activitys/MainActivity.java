@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //startActivityForResultで起動
             startActivity(intent);
         } else if(v.getId() == R.id.buttonRequestToken) {
-            Intent intent = new Intent(this, RequestTokenActivity.class);
+            Intent intent = new Intent(this, SignInActivity.class);
             startActivity(intent);
         }
     }
