@@ -34,11 +34,14 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            list -> {
+                            signInResponse -> {
                                 Timber.d("success");
+                                Timber.d("token:" + signInResponse.getToken());
                             },
                             throwable -> Timber.e(throwable),
-                            () -> Timber.d("complete")
+                            () -> {
+                                Timber.d("complete");
+                            }
                     );
         }
     }
