@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="slp.etr.guhoo.kunto_frontend.activitys.TopPageActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_top_page"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/top_page_icon_blue_w" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:elevation="2dp"
+        android:gravity="center_vertical|center"
+        android:text="ダイエットに挫折したあなた\n筋トレが継続できないあなた\n運動不足のあなた\n薫陶で筋トレを始めませんか？" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="48dp"/>
+
+        <Button
+            android:id="@+id/buttonSignIn"
+            android:layout_width="4dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/top_page_btn"
+            android:text="ログイン"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="48dp"/>
+
+        <Button
+            android:id="@+id/buttonSignUp"
+            android:layout_width="4dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/top_page_btn"
+            android:text="新規登録"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="48dp"/>
+
+    </LinearLayout>
+</LinearLayout>
