@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //リスナーをセット
         findViewById(R.id.buttonMeasure).setOnClickListener(this);
         findViewById(R.id.buttonRequestToken).setOnClickListener(this);
+        findViewById(R.id.buttonTopPage).setOnClickListener(this);
     }
 
     @Override
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if(v.getId() == R.id.buttonRequestToken) {
             Intent intent = new Intent(this, SignInActivity.class);
             startActivity(intent);
+        } else if(v.getId() == R.id.buttonTopPage) {
+            Intent intent = new Intent(this, TopPageActivity.class);
+            startActivity(intent);
         }
+
     }
 }

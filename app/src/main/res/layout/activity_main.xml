@@ -34,4 +34,19 @@
         android:layout_height="wrap_content"
         android:text="トークンリクエスト画面へ遷移" />
 
+    <TextView
+        android:id="@+id/textTopPage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:text="トップページのテスト"
+        android:textSize="16sp"
+        />
+
+    <Button android:id="@+id/buttonTopPage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="トップページ画面へ遷移" />
+
 </LinearLayout>
