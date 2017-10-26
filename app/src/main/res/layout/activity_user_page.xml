@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="hogeさんようこそ"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/buttonSelectTrains"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="トレーニングを記録する"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="ログアウト"
+        android:textSize="20sp" />
+    
+</LinearLayout>
