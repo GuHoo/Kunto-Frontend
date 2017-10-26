@@ -1,7 +1,9 @@
-package slp.etr.guhoo.kunto_frontend;
+package slp.etr.guhoo.kunto_frontend.activitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import slp.etr.guhoo.kunto_frontend.R;
 
 public class SelectTrainsActivity extends AppCompatActivity {
 
