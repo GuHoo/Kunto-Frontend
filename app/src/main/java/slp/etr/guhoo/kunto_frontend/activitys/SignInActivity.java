@@ -1,5 +1,7 @@
 package slp.etr.guhoo.kunto_frontend.activitys;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,7 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import slp.etr.guhoo.kunto_frontend.R;
+import slp.etr.guhoo.kunto_frontend.utils.db.PreferenceController;
 import slp.etr.guhoo.kunto_frontend.utils.http.KuntoService;
 import slp.etr.guhoo.kunto_frontend.utils.http.RetrofitClient;
 import slp.etr.guhoo.kunto_frontend.utils.http.entity.SignInResponse;
@@ -44,7 +47,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                     .subscribe(
                             signInResponse -> {
                                 Timber.d("success");
-                                Timber.d("token:" + signInResponse.getToken());
+                                //PreferenceController.putToken(getApplicationContext(), signInResponse.getToken());
+                                Timber.d("PrefeToken:" + PreferenceController.getToken(getApplicationContext()));
                             },
                             throwable -> Timber.e(throwable),
                             () -> {
