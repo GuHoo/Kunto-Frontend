@@ -24,7 +24,8 @@
         <activity android:name=".activitys.MeasureActivity" />
         <activity android:name=".activitys.SignInActivity" />
         <activity android:name=".activitys.TopPageActivity" />
-        <activity android:name=".activitys.UserPageActivity"></activity>
+        <activity android:name=".activitys.UserPageActivity" />
+        <activity android:name=".SelectTrainsActivity"></activity>
     </application>
 
 </manifest>
