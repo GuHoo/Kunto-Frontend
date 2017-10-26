@@ -1,6 +1,7 @@
 package slp.etr.guhoo.kunto_frontend.activitys;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,8 +48,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                     .subscribe(
                             signInResponse -> {
                                 Timber.d("success");
-                                //PreferenceController.putToken(getApplicationContext(), signInResponse.getToken());
-                                Timber.d("PrefeToken:" + PreferenceController.getToken(getApplicationContext()));
+                                PreferenceController.putToken(getApplicationContext(), signInResponse.getToken());
+                                Intent intent = new Intent(this, UserPageActivity.class);
+                                startActivity(intent);
                             },
                             throwable -> Timber.e(throwable),
                             () -> {
