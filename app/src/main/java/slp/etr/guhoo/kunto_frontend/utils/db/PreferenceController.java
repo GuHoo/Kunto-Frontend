@@ -16,6 +16,13 @@ public class PreferenceController {
         return preferences.getString("token", "NO_DATA");
     }
 
+    public static void removeToken(Context context){
+        SharedPreferences pref = context.getSharedPreferences( "USER_DATA", Context.MODE_PRIVATE );
+        SharedPreferences.Editor editor = pref.edit();
+        editor.remove( "token");
+        editor.commit();
+    }
+
     public static void putUserName(Context context, String name){
         SharedPreferences pref = context.getSharedPreferences( "USER_DATA", Context.MODE_PRIVATE );
         SharedPreferences.Editor editor = pref.edit();
